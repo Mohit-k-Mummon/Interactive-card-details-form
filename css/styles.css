@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+/****************** 
+    CSS VARIABLES
+******************/
+:root {
+    /* Colors */
+        /* Primary */
+        --Linear-gradient: linear-gradient(135deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 86%);
+        --Red: hsl(0, 100%, 66%);
+
+        /* Neutral */
+        --White: hsl(0, 0%, 100%);
+        --Light-grayish-violet: hsl(270, 3%, 87%);
+        --Dark-grayish-violet: hsl(279, 6%, 55%);
+        --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+
+
+/****************** 
+      RESET
+******************/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+
+/****************** 
+        MAIN
+******************/
+body {
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.main-container {
+    height: 100vh;
+}
+
+
+
+
+/****************** 
+    CARD CONTAINER
+******************/
+.card__bg-container {
+    background-image: url(../images/bg-main-mobile.png);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards__container {
+    height: 240px;
+    width: 343px;
+    position: relative;
+}
+
+
+/* Card Images Sizing */
+#card-back,
+#card-front {
+    width: 286px;
+    height: 157px;
+}
+
+
+/* Card Back */
+.card__back-container {
+    height: min-content;
+        width: min-content;
+        position: absolute;
+        left: 16%;
+        top: 3.2rem;
+    }
+
+.card__back-container #card-cvc {
+    position: absolute;
+    top: 7.1rem;
+    left: 23rem;
+    z-index: 1000;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 0.9rem;
+
+}
+
+
+/* Card Front */
+.card__front-container {
+    position: relative;
+    top: 12rem;
+}
+#card-front {
+    box-shadow: 31px 34px 93px -34px rgba(0,0,0,0.23);
+    -webkit-box-shadow: 31px 34px 93px -34px rgba(0,0,0,0.23);
+    -moz-box-shadow: 31px 34px 93px -34px rgba(0,0,0,0.23);
+}
+
+.card__front-container #card-logo {
+    position: absolute;
+    left: -12.5rem;
+    top: -6.2rem;
+    transform: scale(0.16);
+}
+
+.card__front-container #card-number {
+    position: absolute;
+    top: 8.6rem;
+    left: 2rem;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+}
+
+.card__front-container #card-name {
+    position: absolute;
+    top: 12.5rem;
+    left: 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.card__front-container #card-expiration {
+    position: absolute;
+    top: 12.5rem;
+    left: 23rem;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+
+
+
+/****************** 
+    FORM CONTAINER
+******************/
+.form-container {
+    height: auto;
+    margin: 10vh auto 0 auto;
+    padding: 2rem;
+    max-width: 40rem;
+    /* display: none; */
+}
+
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 7px;
+    border: 1px solid var(--Light-grayish-violet);
+    font-family: inherit;
+    font-size: 1.8rem;
+    outline: none;
+    opacity: 0.5;
+}
+
+.form-group.grid {
+    display: grid;
+    min-width: 15.2rem;
+    grid-template-columns: repeat(2,1fr);
+    width: 50%;
+    gap: 0 1rem;
+}
+
+.form-group.grid label {
+    grid-column: 1 / 3;
+    white-space: nowrap;
+}
+
+.form-group.cvc {
+    margin-left: 1rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.titles {
+    display: flex;
+}
+
+/* Button */
+.form-container .button {
+    padding: 1.6rem 3rem;
+    border: none;
+    background-color: var(--Very-dark-violet);
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 10px;
+    font-family: inherit;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 0.3rem;
+}
+
+
+/* Error Messages */
+#name-error,
+#number-error,
+#expir-error,
+#cvc-error {
+    color: var(--Red);
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+#name-error {
+    visibility: hidden;
+}
+
+#number-error {
+    visibility: hidden;
+}
+#expir-error {
+    visibility: hidden;
+}
+#cvc-error {
+    visibility: hidden;
+}
+
+
+
+/****************** 
+    THANK YOU STATE
+******************/
+.thankyou {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 13vh 2rem 2rem 2rem;
+    max-width: 40rem;
+    display: none;
+}
+
+/* Image */
+.thankyou__image {
+    height: 80px;
+    width: auto;
+    margin-bottom: 3.4rem;
+}
+
+.thankyou__header {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.6rem;
+}
+
+.thankyou__tagline {
+    font-size: 1.8rem;
+    color: var(--Dark-grayish-violet);
+    margin-bottom: 4.6rem;
+}
+
+
+.thankyou .button {
+    padding: 1.6rem 3rem;
+    border: none;
+    background-color: var(--Very-dark-violet);
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 10px;
+    font-family: inherit;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 0.3rem;
+}
