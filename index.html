@@ -8,6 +8,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 		<!-- Stylesheet -->
 		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 		<!-- JavaScript -->
 		<script defer src="app.js"></script>
 		<title>Frontend Mentor | Interactive Card</title>
@@ -16,14 +17,18 @@
 		<main class="block">
 			<div class="block__card-container">
 				<div class="cards">
-					<div class="card-back-img">
+					<div data-aos="fade-up" class="card-back-img">
 						<img id="card-back" src="images/bg-card-back.png" alt="" />
 						<p id="card-cvc">000</p>
 					</div>
-					<div class="card-front-img">
+					<div
+						data-aos="fade-down"
+						data-aos-anchor-placement="bottom-center"
+						class="card-front-img"
+					>
 						<img id="card-front" src="images/bg-card-front.png" alt="" />
 						<img id="card-logo" src="images/card-logo.svg" alt="" />
-						<p id="card-number">0000 0000 0000 0000</p>
+						<p id="card-number">&zwj;0000 0000 0000 0000</p>
 						<p id="card-name">Jane Appleseed</p>
 						<p id="card-expiration">
 							<span id="card-mm">00</span>/<span id="card-yy">00</span>
@@ -32,8 +37,8 @@
 				</div>
 			</div>
 
-			<div class="block__form-container">
-				<form class="form" action="">
+			<div data-aos="zoom-in-up" class="block__form-container">
+				<form class="form" action="" novalidate>
 					<div class="form-group">
 						<label for="cardholder">Cardholder name</label>
 						<input
@@ -53,14 +58,30 @@
 							id="card-number-input"
 							placeholder="e.g 1234 5678 9123 0000"
 							maxlength="19"
+							pattern="\d*"
+							inputmode="numeric"
 						/>
 						<p aria-live="polite" id="number-error">Wrong format, numbers only</p>
 					</div>
 					<div class="exp-group">
 						<div class="form-group grid">
 							<label for="">exp. date (mm/yy)</label>
-							<input id="mm-input" type="text" placeholder="MM" maxlength="2" />
-							<input id="yy-input" type="text" placeholder="YY" maxlength="2" />
+							<input
+								id="mm-input"
+								type="text"
+								placeholder="MM"
+								maxlength="2"
+								pattern="\d*"
+								inputmode="numeric"
+							/>
+							<input
+								id="yy-input"
+								type="text"
+								placeholder="YY"
+								maxlength="2"
+								pattern="\d*"
+								inputmode="numeric"
+							/>
 							<p aria-live="polite" id="expir-error">Can't be blank</p>
 						</div>
 						<div class="form-group cvc">
@@ -70,6 +91,8 @@
 								type="text"
 								placeholder="e.g. 123"
 								maxlength="3"
+								pattern="\d*"
+								inputmode="numeric"
 							/>
 							<p aria-live="polite" id="cvc-error">Can't be blank</p>
 						</div>
@@ -85,5 +108,9 @@
 				<button id="btn-continue" type="submit" class="button">Continue</button>
 			</div>
 		</main>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
 	</body>
 </html>
