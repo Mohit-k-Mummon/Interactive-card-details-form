@@ -18,3 +18,7 @@
 *.md
 /design
 /interactive-card-details-form-figma
+/package-lock.json
+/dist
+/node_modules
+/.parcel-cache
