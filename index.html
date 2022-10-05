@@ -13,14 +13,14 @@
 		<title>Frontend Mentor | Interactive Card</title>
 	</head>
 	<body>
-		<main class="main-container">
-			<div class="card__bg-container">
-				<div class="cards__container">
-					<div class="card__back-container">
+		<main class="block">
+			<div class="block__card-container">
+				<div class="cards">
+					<div class="card-back-img">
 						<img id="card-back" src="images/bg-card-back.png" alt="" />
 						<p id="card-cvc">000</p>
 					</div>
-					<div class="card__front-container">
+					<div class="card-front-img">
 						<img id="card-front" src="images/bg-card-front.png" alt="" />
 						<img id="card-logo" src="images/card-logo.svg" alt="" />
 						<p id="card-number">0000 0000 0000 0000</p>
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 
-			<div class="form-container">
+			<div class="block__form-container">
 				<form class="form" action="">
 					<div class="form-group">
 						<label for="cardholder">Cardholder name</label>
@@ -54,7 +54,7 @@
 						/>
 						<p id="number-error">Wrong format, numbers only</p>
 					</div>
-					<div class="flex">
+					<div class="exp-group">
 						<div class="form-group grid">
 							<label for="">exp. date (mm/yy)</label>
 							<input type="text" placeholder="MM" maxlength="2" />
