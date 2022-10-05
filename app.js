@@ -151,7 +151,7 @@ btnContinue.addEventListener('click', () => {
 
 // Regex's
 function nameValidate(input) {
-	return /^[A-Z][a-z]+\s[A-Z][a-z]+$/gim.test(input);
+	return /^[A-Z][a-z]+\s[A-Z][a-z]+$/gi.test(input);
 }
 
 function numberValidate(input) {
@@ -164,8 +164,4 @@ function expirationValidate(input) {
 
 function cvcValidate(input) {
 	return /\b\d{3}\b/gm.test(input);
-}
-
-function reset() {
-	cardholderInput.textContent = '';
 }
